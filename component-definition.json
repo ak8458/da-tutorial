@@ -137,6 +137,16 @@
           }
         },
         {
+          "title": "Custom Quote",
+          "id": "custom-quote",
+          "plugins": {
+            "da": {
+              "rows": 1,
+              "columns": 1
+            }
+          }
+        },
+        {
           "title": "Search",
           "id": "search",
           "plugins": {
