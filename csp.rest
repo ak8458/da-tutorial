@@ -1,0 +1,11 @@
+curl -X POST https://admin.hlx.page/config/acme/sites/website/headers.json \
+  -H 'content-type: application/json' \
+  -H 'x-auth-token: <your-auth-token>' \
+  --data '{
+	"/**": [
+      {
+        "key": "content-security-policy",
+        "value": "script-src 'nonce-aem' 'strict-dynamic'; base-uri 'self'; object-src 'none';"
+      }
+    ]
+}'
