@@ -22,6 +22,11 @@ import {
  * @param {Element} main The container element
  */
 function buildHeroBlock(main) {
+  // Only add to main content area
+  if (!main || main.tagName !== 'MAIN') {
+    return;
+  }
+
   const h1 = main.querySelector('h1');
   const picture = main.querySelector('picture');
   // eslint-disable-next-line no-bitwise
@@ -60,8 +65,13 @@ function autolinkModals(doc) {
  * @param {Element} main The container element
  */
 function buildArticleHeroBlock(main) {
-  // Check if there's already an article-hero block
-  const existingArticleHero = main.querySelector('.article-hero');
+  // Only add to main content area, not header/footer
+  if (!main || main.tagName !== 'MAIN') {
+    return;
+  }
+
+  // Check if there's already an article-hero block anywhere on the page
+  const existingArticleHero = document.querySelector('.article-hero');
   if (existingArticleHero) {
     return;
   }
@@ -71,6 +81,9 @@ function buildArticleHeroBlock(main) {
   const articleHeroBlock = buildBlock('article-hero', '');
   section.append(articleHeroBlock);
   main.prepend(section);
+  
+  // Mark as added to prevent duplication
+  articleHeroBlock.dataset.articleHeroAdded = 'true';
 }
 
 /**
@@ -79,6 +92,11 @@ function buildArticleHeroBlock(main) {
  */
 function buildAutoBlocks(main) {
   try {
+    // Only process main content area, not header/footer
+    if (!main || main.tagName !== 'MAIN') {
+      return;
+    }
+
     if (!main.querySelector('.hero')) buildHeroBlock(main);
     
     // Check if page theme is 'article' and build article-hero block
