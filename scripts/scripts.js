@@ -56,12 +56,36 @@ function autolinkModals(doc) {
 }
 
 /**
+ * Builds article hero block for article-themed pages
+ * @param {Element} main The container element
+ */
+function buildArticleHeroBlock(main) {
+  // Check if there's already an article-hero block
+  const existingArticleHero = main.querySelector('.article-hero');
+  if (existingArticleHero) {
+    return;
+  }
+
+  // Create a new article-hero section
+  const section = document.createElement('div');
+  const articleHeroBlock = buildBlock('article-hero', '');
+  section.append(articleHeroBlock);
+  main.prepend(section);
+}
+
+/**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
  */
 function buildAutoBlocks(main) {
   try {
     if (!main.querySelector('.hero')) buildHeroBlock(main);
+    
+    // Check if page theme is 'article' and build article-hero block
+    const theme = getMetadata('theme');
+    if (theme && theme.toLowerCase().includes('article')) {
+      buildArticleHeroBlock(main);
+    }
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);
