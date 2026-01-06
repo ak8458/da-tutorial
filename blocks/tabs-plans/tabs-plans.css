@@ -1,0 +1,102 @@
+.tabs-plans .tabs-plans-list {
+  display: flex;
+  gap: 0;
+  max-width: 100%;
+  font-size: var(--body-font-size-s);
+  overflow-x: auto;
+  border-bottom: 2px solid var(--link-color);
+}
+
+@media (width >= 900px) {
+  .tabs-plans .tabs-plans-list {
+    font-size: var(--body-font-size-m);
+  }
+}
+
+.tabs-plans .tabs-plans-list button {
+  flex: 1 1 auto;
+  margin: 0;
+  border: none;
+  border-radius: 8px 8px 0 0;
+  padding: 16px 24px;
+  background-color: var(--light-color);
+  color: var(--text-color);
+  font-weight: 600;
+  line-height: 1.3;
+  text-align: center;
+  text-overflow: unset;
+  overflow: unset;
+  white-space: nowrap;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.tabs-plans .tabs-plans-list button:hover {
+  background-color: #e8e8e8;
+}
+
+.tabs-plans .tabs-plans-list button p {
+  margin: 0;
+}
+
+.tabs-plans .tabs-plans-list button[aria-selected='true'] {
+  background-color: var(--link-color);
+  color: var(--background-color);
+  cursor: default;
+}
+
+.tabs-plans .tabs-plans-panel {
+  padding: 32px;
+  background-color: var(--background-color);
+  border: 1px solid #e0e0e0;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+}
+
+.tabs-plans .tabs-plans-panel[aria-hidden='true'] {
+  display: none;
+}
+
+.tabs-plans .tabs-plans-panel strong {
+  display: block;
+  font-size: var(--heading-font-size-m);
+  color: var(--heading-color);
+  margin-bottom: 16px;
+}
+
+.tabs-plans .tabs-plans-panel p {
+  margin: 0 0 16px;
+  line-height: 1.6;
+}
+
+.tabs-plans .tabs-plans-panel a {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 12px 24px;
+  background-color: var(--link-color);
+  color: var(--background-color);
+  border-radius: 24px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.tabs-plans .tabs-plans-panel a:hover {
+  background-color: var(--link-hover-color);
+  text-decoration: none;
+}
+
+@media (width < 600px) {
+  .tabs-plans .tabs-plans-list {
+    flex-direction: column;
+    border-bottom: none;
+  }
+
+  .tabs-plans .tabs-plans-list button {
+    border-radius: 0;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .tabs-plans .tabs-plans-panel {
+    padding: 24px 16px;
+  }
+}

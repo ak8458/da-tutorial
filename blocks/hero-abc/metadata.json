@@ -1,0 +1,38 @@
+{
+  "variantName": "hero-abc",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-01-06T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.ab.bluecross.ca/index.php",
+    "originPage": "Alberta Blue Cross homepage",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "purpose": "homepage-hero",
+    "imagePattern": "background-overlay"
+  },
+  "contentPattern": {
+    "structure": "background-image + heading + paragraph",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "homepage hero sections",
+      "landing pages with background images",
+      "promotional banners"
+    ],
+    "notSuitableFor": [
+      "text-only hero sections",
+      "hero with multiple CTAs"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-01-06T00:00:00.000Z"
+  }
+}
