@@ -1,0 +1,31 @@
+{
+  "templates": [
+    {
+      "name": "abc-homepage",
+      "urls": ["https://www.ab.bluecross.ca/index.php"],
+      "description": "Alberta Blue Cross homepage template with hero, news cards, plan tabs, and resources",
+      "blocks": [
+        {
+          "name": "hero-abc",
+          "selector": ".hero-area, .hero-section, [class*='hero']",
+          "parser": "hero-abc"
+        },
+        {
+          "name": "cards-news",
+          "selector": ".latest-news, .news-grid, [class*='news']",
+          "parser": "cards-news"
+        },
+        {
+          "name": "tabs-plans",
+          "selector": ".plan-tabs, .tab-container, [class*='tabs']",
+          "parser": "tabs-plans"
+        },
+        {
+          "name": "columns-resources",
+          "selector": ".resources-section, .resource-cards, [class*='resource']",
+          "parser": "columns-resources"
+        }
+      ]
+    }
+  ]
+}

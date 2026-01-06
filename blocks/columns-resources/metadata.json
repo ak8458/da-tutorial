@@ -1,0 +1,38 @@
+{
+  "variantName": "columns-resources",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-01-06T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.ab.bluecross.ca/index.php",
+    "originPage": "Alberta Blue Cross homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "grey",
+    "density": "standard",
+    "purpose": "resource-cards",
+    "imagePattern": "side-image"
+  },
+  "contentPattern": {
+    "structure": "heading + paragraph + cta + image",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "resource card sections",
+      "side-by-side content blocks",
+      "feature highlights"
+    ],
+    "notSuitableFor": [
+      "text-only columns",
+      "multi-column layouts (3+)"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-01-06T00:00:00.000Z"
+  }
+}
