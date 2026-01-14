@@ -14,7 +14,7 @@ export default async function decorate(block) {
   const table = document.createElement('table');
   const thead = document.createElement('thead');
   const tbody = document.createElement('tbody');
-
+  console.log("adding new change");
   const header = !block.classList.contains('no-header');
   if (header) table.append(thead);
   table.append(tbody);

@@ -1,0 +1,49 @@
+{
+  "definitions": [
+    {
+      "title": "Article Hero",
+      "id": "article-hero",
+      "plugins": {
+        "da": {
+          "unsafeHTML": "<div class=\"article-hero\"><div class=\"article-hero-container\"><div class=\"article-hero-content\"><div class=\"article-hero-meta\"><span class=\"article-hero-author\"></span><time class=\"article-hero-date\"></time></div><h1 class=\"article-hero-title\"></h1><p class=\"article-hero-description\"></p></div></div></div>"
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "article-hero",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "div:nth-child(1)>div:nth-child(1)>div:nth-child(1)>div:nth-child(1)>span:nth-child(1)",
+          "label": "Author",
+          "value": ""
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "div:nth-child(1)>div:nth-child(1)>div:nth-child(1)>div:nth-child(1)>time:nth-child(2)",
+          "label": "Publish Date",
+          "value": ""
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "div:nth-child(1)>div:nth-child(1)>div:nth-child(1)>h1:nth-child(2)",
+          "label": "Title",
+          "value": ""
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "div:nth-child(1)>div:nth-child(1)>div:nth-child(1)>p:nth-child(3)",
+          "label": "Description",
+          "value": ""
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

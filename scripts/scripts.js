@@ -22,6 +22,11 @@ import {
  * @param {Element} main The container element
  */
 function buildHeroBlock(main) {
+  // Only add to main content area
+  if (!main || main.tagName !== 'MAIN') {
+    return;
+  }
+
   const h1 = main.querySelector('h1');
   const picture = main.querySelector('picture');
   // eslint-disable-next-line no-bitwise
@@ -56,12 +61,49 @@ function autolinkModals(doc) {
 }
 
 /**
+ * Builds article hero block for article-themed pages
+ * @param {Element} main The container element
+ */
+function buildArticleHeroBlock(main) {
+  // Only add to main content area, not header/footer
+  if (!main || main.tagName !== 'MAIN') {
+    return;
+  }
+
+  // Check if there's already an article-hero block anywhere on the page
+  const existingArticleHero = document.querySelector('.article-hero');
+  if (existingArticleHero) {
+    return;
+  }
+
+  // Create a new article-hero section
+  const section = document.createElement('div');
+  const articleHeroBlock = buildBlock('article-hero', '');
+  section.append(articleHeroBlock);
+  main.prepend(section);
+  
+  // Mark as added to prevent duplication
+  articleHeroBlock.dataset.articleHeroAdded = 'true';
+}
+
+/**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
  */
 function buildAutoBlocks(main) {
   try {
+    // Only process main content area, not header/footer
+    if (!main || main.tagName !== 'MAIN') {
+      return;
+    }
+
     if (!main.querySelector('.hero')) buildHeroBlock(main);
+    
+    // Check if page theme is 'article' and build article-hero block
+    const theme = getMetadata('theme');
+    if (theme && theme.toLowerCase().includes('article')) {
+      buildArticleHeroBlock(main);
+    }
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);
